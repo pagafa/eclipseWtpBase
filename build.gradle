@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '0.1.0'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+eclipse {
+	wtp {
+		component {
+			contextPath = '/'
+		}
+		facet {
+			  facets = facets
+		      facet name: 'java', version: '1.7'
+		      facet name: 'jst.web', version: '3.1'
+		      facet name: 'wst.jsdt.web', version: '3.1'
+      	}
+	}
+}
